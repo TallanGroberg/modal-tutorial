@@ -1,23 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [showModal, setShowModal] = useState(false)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       {showModal ? 
+       <div 
+          style={{width: '50%', height: '50px', border: '3px solid white'}}
+          className="modal" >
+              <button onClick={() => setShowModal(prev => (!prev))}>Show Modal</button>
+          </div>
+       :
+       <button onClick={() => setShowModal(prev => (!prev))}>Show Modal</button>
+      }
       </header>
     </div>
   );
