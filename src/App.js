@@ -5,24 +5,36 @@ import CloseModal from './component/CloseModal';
 function App() {
   const [showModal, setShowModal] = useState(false)
 
+  console.log("congrats")
+  console.log("you found the easter egg")
+  console.log("please sign-up for my news letter to make a friend that shows you how to make web dev more fun!!")
+  console.log(`https://newsletter-tutorial.surge.sh/`)
 
   return (<>
       <AppStyles>
-       
-
        {showModal === true 
           ?
           <div className="modal">
               <CloseModal 
                 setShowModal={setShowModal}
                 />
+
                 <form>
+                  <h4>form for illustration</h4>
                   <input />
                   <input />
+                  <br />
+                  <a href="">Back to tutorial</a>
+                  <p>or...</p>
+                  <a href="https://github.com/TallanGroberg/modal-tutorial">Github</a>
                 </form>
             </div>
-          : 
+          :
+          <>
+          <h4>Click the button to show the modal.</h4>
           <button onClick={() => setShowModal(prev => (!prev))}>Show</button>
+
+          </>
         }
         
         
@@ -42,6 +54,7 @@ const AppStyles = styled.div`
     
 
 .modal {
+  padding: 4px;
   display: flex;
   flex-direction: row-reverse;
   width: 80%; 
@@ -56,7 +69,7 @@ form {
 }
 
 .close-button {
-    border: 1px solid black;
+    
     width: 32px;
     height: 32px;
 }
